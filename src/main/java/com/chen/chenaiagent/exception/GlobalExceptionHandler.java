@@ -1,0 +1,21 @@
+package com.chen.chenaiagent.exception;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@Slf4j
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+    @ExceptionHandler(BusinessException.class)
+    public BaseResponse<?> handleBusinessException(BusinessException e) {
+        log.warn("businessException: " + e.getMessage(), e);
+        return ResultUtils.error(e.getCode(), e.getMessage());
+    }
+    @ExceptionHandler(RuntimeException.class)
+    public BaseResponse<?> handleRuntimeException(RuntimeException e) {
+        log.error("runtimeException: " ,e);
+        return ResultUtils.error(ErrorCode.SYSTEM_ERROR);
+    }
+
+}
