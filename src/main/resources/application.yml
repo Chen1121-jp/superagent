@@ -10,7 +10,7 @@ spring:
     dashscope:
       chat:
         options:
-          model: qwen-plus
+          model: qwen-max
     chat:
       memory:
         repository:

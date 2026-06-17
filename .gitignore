@@ -37,3 +37,14 @@ src/main/resources/application-local.yml
 
 ### Chat Memory ###
 chat-memory/
+
+### Secrets & Local Config ###
+src/main/resources/mcp-servers.json
+chen-image-serch-mcp-server/
+*.log
+.env
+*.env
+application-local*.yml
+credentials*
+.claude/settings.local.json
+tmp/
